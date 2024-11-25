@@ -11743,11 +11743,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Инициализация слайдера
-swiper__WEBPACK_IMPORTED_MODULE_7__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_8__.Navigation]);
+swiper__WEBPACK_IMPORTED_MODULE_7__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_8__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_8__.Autoplay]);
 const customSlider = new swiper__WEBPACK_IMPORTED_MODULE_7__["default"]('.custom-slider', {
   slidesPerView: 1,
   spaceBetween: 40,
   loop: true,
+  autoplay: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'

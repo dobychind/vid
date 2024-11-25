@@ -18,7 +18,7 @@
   gap: 16px;
 }
 
-.header { 
+.header {
   // display: flex;
   // width: 100%;
   // padding: 16px;
@@ -36,6 +36,20 @@
     align-items: center;
     gap: 40px;
     color: #fff;
+
+    p {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+      text-align: center;
+      margin: 0;
+
+      &:hover {
+        color: #da1515; /* При наведении меняем цвет на зеленый */
+      }
+    }
 
     a {
       color: #fff;
@@ -65,11 +79,14 @@ a svg {
 
   &:hover {
     opacity: 0.6;
-    transform: scale(1.2); 
+    transform: scale(1.2);
   }
 }
 
 @include mobile {
+  .footer__container {
+    flex-direction: column;
+  }
   .footer__social {
     flex-direction: column;
     gap: 16px;

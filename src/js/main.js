@@ -6,17 +6,17 @@ import { enableScroll } from './functions/enable-scroll.js';
 import { getHeaderHeight } from './functions/header-height.js';
 
 import AOS from 'aos';
-
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 // Инициализация слайдера
-Swiper.use([Navigation])
+Swiper.use([Navigation, Autoplay])
 
 const customSlider = new Swiper('.custom-slider', {
   slidesPerView: 1,
   spaceBetween: 40,
   loop: true,
+  autoplay: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
