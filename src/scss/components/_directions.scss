@@ -1,0 +1,86 @@
+.cards {
+  &__wrap {
+    width: 100%;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.direction__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 160px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+
+    .card__image {
+      transform: scale(1.1); // Увеличение изображения
+    }
+
+    .card__text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card__overlay {
+      opacity: 0.5; /* Добавляем затемнение при наведении */
+    }
+  }
+}
+
+.card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease; // Плавное увеличение изображения
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Черный фон с прозрачностью 0.3 */
+  transition: opacity 0.3s ease;
+}
+
+.card__text {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  opacity: 0;
+  transform: translateY(20px); // Начальное смещение текста вниз
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  margin: 0;
+  color: white;
+}

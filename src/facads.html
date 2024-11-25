@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="section" style="overflow: hidden;">
+        @include('partials/global/slider.html')
+        <div class="container mobile">
+          <h3 class="about__title">Спектр услуг</h3>
+          <div class="about__container">
+            <p class="about__text">Наша компания специализируется на проектировании и установке вентилируемых фасадов, предлагая инновационные решения для коммерческих и жилых зданий. Мы обеспечиваем не только эстетичное оформление фасадов, но и долговечную защиту конструкций от внешних воздействий, гарантируя энергоэффективность и комфорт внутри помещений.</p>
+          </div>
+          @include('partials/global/portfolio.html')
+
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>

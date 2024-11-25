@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main data-scroll-container class="main">
+      <section class="section bg-white" style="overflow: hidden;">
+        @include('partials/global/slider.html')
+        <div class="container mobile" data-aos="fade-right" data-aos-offset="-200" data-aos-delay="300" data-aos-duration="600"
+          data-aos-easing="ease-out" data-aos-mirror="true" data-aos-once="true" data-aos-anchor-placement="top-center">
+          <h3 class="about__title">О нас</h3>
+          <div class="about__container">
+            <p class="about__text">Наша компания предоставляет полный спектр услуг в области строительства, наружной
+              рекламы и металлообработки. Мы специализируемся на проектировании и установке вентилируемых фасадов,
+              изготовлении металлоконструкций, фрезерной резке ЧПУ и создании наружной рекламы.
+            </p>
+            <p class="about__text">
+              Мы предлагаем инновационные решения, сочетающие эстетическую привлекательность и высокую функциональность,
+              обеспечивая долговечность и надежность наших конструкций. Мы используем только качественные материалы и
+              современное оборудование, что позволяет нам гарантировать высокую точность выполнения работ и соблюдение
+              сроков.
+            </p>
+            <p class="about__text">
+              Наша команда профессионалов всегда готова предложить индивидуальные решения для каждого клиента, с учетом
+              специфики и требований проекта, обеспечивая высокий уровень сервиса и удовлетворенность клиентов.
+            </p>
+            @include('partials/global/directions.html')
+          </div>
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+</body>
+
+</html>

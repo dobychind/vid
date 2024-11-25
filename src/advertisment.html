@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="section" style="overflow: hidden;">
+        @include('partials/global/slider.html')
+        <div class="container mobile">
+          <h3 class="about__title">Спектр услуг</h3>
+          <div class="about__container">
+            <p class="about__text">Наша компания предлагает комплексные услуги по проектированию и установке наружной рекламы. Мы создаем эффективные и визуально привлекательные рекламные конструкции, которые помогают нашим клиентам выделяться и привлекать внимание аудитории. Мы используем только высококачественные материалы и современные технологии, что обеспечивает долговечность, яркость и устойчивость наших решений в любых погодных условиях.</p>
+          </div>
+          @include('partials/global/portfolio.html')
+
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>

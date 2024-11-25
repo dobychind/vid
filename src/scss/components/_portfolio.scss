@@ -1,0 +1,137 @@
+// Стили для контейнера портфолио
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Три столбца
+    gap: 16px; // Расстояние между карточками
+  }
+  
+  // Стили для карточек фотографий
+  .photo-card {
+    position: relative;
+    overflow: hidden; // Обрезка лишних частей изображения
+    border-radius: 8px;
+    height: 300px; // Фиксированная высота для всех карточек
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    .photo-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Заполнение блока с сохранением пропорций
+      transition: transform 0.3s;
+      border-radius: 8px;
+  
+      &:hover {
+        transform: scale(1.05); // Анимация при наведении
+      }
+    }
+  }
+  
+  // Стили для попапа
+  .photo-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  
+    &.active {
+      display: flex;
+    }
+  
+    .photo-popup-content {
+      position: relative;
+      max-width: 80%;
+      max-height: 80%; // Ограничение высоты попапа
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .popup-photo {
+        max-width: 100%;
+        max-height: 80vh; // Ограничение по высоте экрана
+        border-radius: 8px;
+        object-fit: contain; // Сохраняет пропорции и полностью показывает изображение
+      }
+  
+      .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+      }
+  
+      .popup-caption {
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        margin-top: 10px;
+        max-width: 90%;
+        word-wrap: break-word;
+      }
+    }
+  }
+  
+
+// Стили для контейнера портфолио
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Три столбца для десктопа
+    gap: 16px;
+  
+    // Адаптация для планшетов
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr); // Два столбца
+    }
+  
+    // Адаптация для небольших планшетов
+    @include small-tablet {
+      grid-template-columns: repeat(2, 1fr); // Два столбца
+      gap: 12px;
+    }
+  
+    // Адаптация для мобильных устройств
+    @include mobile {
+      grid-template-columns: 1fr; // Один столбец
+      gap: 8px; // Меньший отступ
+    }
+  }
+  
+  // Стили для карточек фотографий
+  .photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px; // Фиксированная высота для всех карточек
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    // Уменьшение высоты для мобильных устройств
+    @include mobile {
+      height: 200px;
+    }
+  
+    .photo-thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  

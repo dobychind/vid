@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="section" style="overflow: hidden;">
+        @include('partials/global/slider.html')
+        <div class="container mobile">
+          <h3 class="about__title">Спектр услуг</h3>
+          <div class="about__container">
+            <p class="about__text">
+              Наша компания предоставляет услуги фрезерной резки ЧПУ, обеспечивая высокоточную обработку материалов с учетом всех требований заказчика. Мы работаем с различными материалами, включая металл, дерево, пластик и композиты, гарантируя идеальную точность и качество каждой детали. Благодаря современному оборудованию и опытным специалистам, мы обеспечиваем быструю и надежную реализацию проектов любой сложности</p>
+          </div>
+          @include('partials/global/portfolio.html')
+
+        </div>
+      </section>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
