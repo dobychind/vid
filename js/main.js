@@ -11806,52 +11806,6 @@ buttons.forEach(button => {
     this.classList.add('active');
   });
 });
-
-// Инициализация Locomotive Scroll
-const locomotiveScroll = new LocomotiveScroll();
-
-// Прокрутка к блоку по нажатию на кнопку
-const scrollContainer = document.querySelector('[data-scroll-container]');
-if (scrollContainer) {
-  // Прокрутка к блоку по нажатию на кнопку
-  const scrollButton = document.querySelector('.hero__bottom');
-  if (scrollButton) {
-    scrollButton.addEventListener('click', function () {
-      // Скролл до следующей секции без указания easing
-      locomotiveScroll.scrollTo('.desc', {
-        offset: -100,
-        // Смещение (при необходимости)
-        duration: 3 // Длительность скролла в миллисекундах
-      });
-    });
-  }
-}
-const arrowUp = document.querySelector('.arrow-up');
-let lastScrollTop = 0;
-if (arrowUp) {
-  // Изначально скрываем кнопку
-  arrowUp.classList.remove('show');
-
-  // Отслеживаем событие прокрутки
-  window.addEventListener('scroll', function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Проверяем, не находимся ли мы в самом верху страницы
-    if (scrollTop === 0) {
-      arrowUp.classList.remove('show');
-    } else if (scrollTop < lastScrollTop) {
-      arrowUp.classList.add('show');
-    } else {
-      arrowUp.classList.remove('show');
-    }
-    lastScrollTop = scrollTop;
-  });
-  arrowUp.addEventListener('click', function () {
-    locomotiveScroll.scrollTo(0, {
-      duration: 1
-    });
-  });
-}
 aos__WEBPACK_IMPORTED_MODULE_6__.init();
 document.querySelectorAll('.animate-on-load').forEach(function (element) {
   element.classList.add('aos-animate');
@@ -11866,24 +11820,6 @@ document.addEventListener("scroll", function () {
     }
   });
 });
-
-// const scrollButton = document.querySelector('.hero__bottom');
-
-// if (scrollButton) {
-//   const scrollingBlock = document.querySelector('.hero');
-
-//   scrollButton.addEventListener('click', function () {
-//     scroll.scrollTo(scrollingBlock.scrollHeight);
-//   });
-// }
-
-// import './libs/bvi.min.js'
-
-// new isvek.Bvi({
-//   fontSize: 24, // Размер шрифта
-//   theme: 'black' // Цветовая тема сайта
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
   const photoCards = document.querySelectorAll('.photo-card'); // Все карточки
   const popup = document.getElementById('photoPopup'); // Попап
@@ -11899,23 +11835,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       popupImage.src = img.src; // Устанавливаем изображение в попап
       popupCaption.textContent = caption; // Устанавливаем текст в попап
-      popup.classList.add('active'); // Показываем попап
+      popup.classList.add('active');
     });
   });
-
-  // Закрытие попапа при нажатии на крестик
   closeButton.addEventListener('click', () => {
     popup.classList.remove('active');
   });
-
-  // Закрытие попапа при нажатии на свободное место
   popup.addEventListener('click', event => {
     if (event.target === popup) {
       popup.classList.remove('active');
     }
   });
-
-  // Закрытие попапа при нажатии на ESC
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       popup.classList.remove('active');
